@@ -1,9 +1,8 @@
 from abc import ABC, abstractmethod
 
-
 class Jarat(ABC):
     def __init__(self, jaratszam, celallomas, jegyar):
-        self.jaratszam = jaratszam
+        self.jaratszam = int(jaratszam)
         self.celallomas = celallomas
         self.jegyar = jegyar
 

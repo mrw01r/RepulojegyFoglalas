@@ -1,4 +1,3 @@
-from Jarat import Jarat
 from BelfoldiJarat import BelfoldiJarat
 from NemzetkoziJarat import NemzetkoziJarat
 from LegiTarsasag import LegiTarsasag
@@ -7,9 +6,9 @@ from  JegyFoglalas import JegyFoglalas
 def main():
     legi_tarsasag = LegiTarsasag("Példa Airlines")
 
-    jarat1 = BelfoldiJarat("B001", "Budapest", 10000)
-    jarat2 = NemzetkoziJarat("N001", "London", 50000)
-    jarat3 = NemzetkoziJarat("N002", "New York", 100000)
+    jarat1 = BelfoldiJarat(1, "Budapest", 10000)
+    jarat2 = NemzetkoziJarat(2, "London", 50000)
+    jarat3 = NemzetkoziJarat(3, "New York", 100000)
 
     legi_tarsasag.hozzaad_jarat(jarat1)
     legi_tarsasag.hozzaad_jarat(jarat2)
@@ -36,8 +35,8 @@ def main():
             for i, fogl in enumerate(foglalas.listar_foglalasok()):
                 print(f"{i + 1}. Járatszám: {fogl.jaratszam}, Célállomás: {fogl.celallomas}, Ár: {fogl.jegyar}")
 
-            jaratszam = int(input("Válaszd ki a lemondani kívánt foglalás számát: ")) - 1
-            print(foglalas.lemondas(legi_tarsasag.jaratok[jaratszam]))
+            jaratszam = int(input("Add meg a lemondani kívánt foglalás járatszámát: "))
+            print(foglalas.lemondas(jaratszam))
 
         elif valasztas == "3":
             for fogl in foglalas.listar_foglalasok():
